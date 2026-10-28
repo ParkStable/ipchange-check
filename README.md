@@ -6,14 +6,14 @@
 
 ## 一键部署
 
-**先把命令中的 `YOUR_USERNAME/nezha-ip-watch` 替换为你的 GitHub 用户名和仓库名。示例使用公开仓库的 `main` 分支；如果分支不同，也需替换。**
+**先把命令中的 `ParkStable/ipchange-check` 替换为你的 GitHub 用户名和仓库名。示例使用公开仓库的 `main` 分支；如果分支不同，也需替换。**
 
 ### 换 IP 后重启整台 EC2
 
 在目标 EC2 的终端执行，下载成功后自动安装并启用定时器：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/nezha-ip-watch/main/install.sh -o nezha-ip-watch-install.sh && sudo bash nezha-ip-watch-install.sh reboot
+curl -fsSL https://raw.githubusercontent.com/ParkStable/ipchange-check/main/install.sh -o nezha-ip-watch-install.sh && sudo bash nezha-ip-watch-install.sh reboot
 ```
 
 ### 换 IP 后只重启哪吒 Agent
@@ -21,7 +21,7 @@ curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/nezha-ip-watch/main/i
 如果仅重启 Agent 就能恢复 IP 上报，可以使用此模式，避免整机重启中断其他业务：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/nezha-ip-watch/main/install.sh -o nezha-ip-watch-install.sh && sudo bash nezha-ip-watch-install.sh agent
+curl -fsSL https://raw.githubusercontent.com/ParkStable/ipchange-check/main/install.sh -o nezha-ip-watch-install.sh && sudo bash nezha-ip-watch-install.sh agent
 ```
 
 默认 Agent 服务名为 `nezha-agent.service`。自定义服务名时，追加实际名称：
