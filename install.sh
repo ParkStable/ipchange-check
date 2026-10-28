@@ -36,8 +36,8 @@ CONFIG_FILE=/etc/default/nezha-ip-watch
 STATE_DIR=/var/lib/nezha-ip-watch
 ACTION=agent
 AGENT_UNIT=nezha-agent.service
-COOLDOWN_SECONDS=900
-CONFIRMATIONS=2
+COOLDOWN_SECONDS=0
+CONFIRMATIONS=1
 [[ ! -f $CONFIG_FILE ]] || source "$CONFIG_FILE"
 
 mode=${1:-run}
@@ -205,7 +205,7 @@ WATCHER
 
 chmod 0755 "$watch_tmp"
 mv -f -- "$watch_tmp" /usr/local/sbin/nezha-ip-watch
-printf 'ACTION=%s\nAGENT_UNIT=%s\nCOOLDOWN_SECONDS=900\nCONFIRMATIONS=2\n' "$action" "$agent_unit" > "$config_tmp"
+printf 'ACTION=%s\nAGENT_UNIT=%s\nCOOLDOWN_SECONDS=0\nCONFIRMATIONS=1\n' "$action" "$agent_unit" > "$config_tmp"
 chmod 0600 "$config_tmp"
 mv -f -- "$config_tmp" /etc/default/nezha-ip-watch
 
